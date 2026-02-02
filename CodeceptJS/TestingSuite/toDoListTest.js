@@ -1,17 +1,19 @@
 const tasks = require("./toDoListTasks.json");
-Feature("Функциональное тестирование cписка задач");
+
+Feature("Functional testing of the task list");
+
 Before(({ I }) => {
   I.amOnPage("https://todomvc.com/examples/emberjs/todomvc/dist/");
   I.see("todos");
 });
-Scenario("Добавление задачи", ({ I }) => {
-  I.fillField("input.new-todo", "Стать Миллиардером");
+
+Scenario("Adding one specific task", ({ I }) => {
+  I.fillField("input.new-todo", "Become rich");
   I.pressKey("Enter");
 });
 
-
-  tasks.forEach((task) => {
-    Scenario(`Добавление задачи ${task}` , ({ I }) => {
+tasks.forEach((task) => {
+  Scenario(`Adding a task: ${task}`, ({ I }) => {
     I.fillField("input.new-todo", task);
     I.pressKey("Enter");
   });

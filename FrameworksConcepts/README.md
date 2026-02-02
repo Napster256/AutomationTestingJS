@@ -423,3 +423,15 @@ db инструменты => на скрине
 Дополнительно к PERFORMANCE :
 OWASP ZAP / Burp = Безопасность
 ```
+
+## Документация
+
+1. [Selenium](https://www.selenium.dev/)
+2. [Playwright](https://playwright.dev/)
+3. [CodeceptJS](https://codecept.io/)
+4. [Cypress](https://www.cypress.io/#create)
+5. [TestCafe](https://testcafe.io/)
+6. [Puppeteer](https://pptr.dev/)
+7. [Jest](https://jestjs.io/)
+8. [Mocha](https://mochajs.org/)
+9. [Chai](https://www.chaijs.com/)

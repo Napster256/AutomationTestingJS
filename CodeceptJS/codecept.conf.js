@@ -16,6 +16,9 @@ exports.config = {
       show: true,
       windowSize: '1200x900',
       waitForAction: 2888
+    },
+    REST: {
+      endpoint: "",
     }
   },
   include: {
