@@ -19,6 +19,9 @@ exports.config = {
     },
     REST: {
       endpoint: "",
+      onRequest: (request) => {
+       request.maxRedirects = 0;
+      }
     }
   },
   include: {

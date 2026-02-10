@@ -109,6 +109,38 @@ Scenario.skip(
   },
 );
 
+Scenario(
+  "Sets cookie(s) as provided by the query string and redirects to cookie list.",
+  async ({ I }) => {
+    const cookies = { name: "theHighTower", value: "theRedBird" };
+    let response = await I.sendGetRequest(
+      httpBin + `/cookies/set?${cookies.name}=${cookies.value}`,
+    );
+    assert.equal(response.status, 302);
+    assert.equal(response.headers.location, "/cookies");
+    assert.equal(
+      response.headers["set-cookie"][0].includes(
+        `${cookies.name}=${cookies.value}`,
+      ),
+      true,
+    );
+  },
+);
+
+Scenario("check If-Modified-Since or If-None-Match header", async ({ I }) => {
+  let response = await I.sendGetRequest(httpBin + "/cache", {
+    "If-Modified-Since": "friday, 31 december 2000",
+    "If-None-Match": "778855",
+  });
+  if (
+    response.config.headers["If-Modified-Since"] ||
+    response.config.headers["If-None-Match"]
+  ) {
+    assert.equal(response.status, 304);
+  } else {
+    assert.equal(response.status, 200);
+  }
+});
 Scenario("validate json response with schema", async ({ I }) => {
   const ajv = new Ajv({
     strict: true,
