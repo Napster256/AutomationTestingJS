@@ -34,3 +34,5 @@
 ```bash
 npm install
 ```
+---
+© 2020 AutomationTestingJS. Все права защищены.
