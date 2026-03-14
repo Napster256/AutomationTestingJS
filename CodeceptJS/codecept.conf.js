@@ -1,4 +1,7 @@
-const { setHeadlessWhen, setCommonPlugins } = require('@codeceptjs/configure');
+const {
+  setHeadlessWhen,
+  setCommonPlugins
+} = require('@codeceptjs/configure');
 // turn on headless mode when running with HEADLESS=true environment variable
 // export HEADLESS=true && npx codeceptjs run
 setHeadlessWhen(process.env.HEADLESS);
@@ -20,12 +23,15 @@ exports.config = {
     REST: {
       endpoint: "",
       onRequest: (request) => {
-       request.maxRedirects = 0;
+        request.maxRedirects = 0;
       }
     }
   },
   include: {
-    I: './steps_file.js'
+    I: './steps_file.js',
+    vikunjaMainDemoPage: "./pages/vikunjaMainDemo.js",
+    vikunjaRegisterPage: "./pages/vikunjaRegister.js",
+    repetitiveActionsStep: "./steps/repetitiveActions.js",
   },
   name: 'CodeceptJS'
 }
