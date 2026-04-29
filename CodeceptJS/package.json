@@ -6,7 +6,9 @@
     "codeceptjs:ui": "npx codecept-ui --app",
     "codeceptjs:debug": "npx codeceptjs run --steps --verbose",
     "codeceptjs:gpo": "npx codeceptjs gpo",
-    "codeceptjs:gpo:step": "npx codeceptjs go --type step"
+    "codeceptjs:gpo:step": "npx codeceptjs go --type step",
+    "codeceptjs:gh": "npx codeceptjs gh",
+    "codeceptjs:def" :"npx codeceptjs def"
   },
   "devDependencies": {
     "@codeceptjs/ui": "^1.3.7",
