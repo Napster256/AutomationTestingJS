@@ -7,14 +7,7 @@ Scenario("ScrollFooterHelper", ({ I }) => {
 });
 
 Scenario("JiraTicketHelper", async ({ I }) => {
-  let response = await I.sendGetRequest(`https://petstore.swagger.io/`);
+  let response = await I.sendGetRequest(`https://www.postman.com/`);
   I.addJiraTicket();
   assert.equal(response.status, 200);
 });
- Scenario("JiraTicketHelper", async ({ I }) => {
-  let response = await I.sendGetRequest(`https://petstore.swagger.io/`);
-  I.addJiraTicket();
-  assert.equal(response.status, 200);
-});
-
-Scenario
